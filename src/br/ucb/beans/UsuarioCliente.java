@@ -39,7 +39,7 @@ public class UsuarioCliente extends Usuario implements Serializable{
 		return super.getNome();
 	}
 	
-	@Column(name="senha_usuario_cliente") 
+	@Column(name="senha_usurio_cliente") 
 	public String getSenha(){
 		return super.getSenha();
 	}
