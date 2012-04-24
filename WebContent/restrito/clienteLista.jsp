@@ -44,12 +44,12 @@
 				</h:column>
 
 				<h:column>
-				<h:commandLink actionListener="#{clienteManagedBean.excluir}">
+				<h:commandLink actionListener="#{clienteManagedBean.excluir}"> 
 					<f:attribute name="produto" value="#{item}" />
 					<h:graphicImage value="/img/excluir.png" title="Excluir"
 						style="border: none" />
 				</h:commandLink>
-				</h:column>
+				</h:column> 
 				
 				<h:column>
 				<h:commandLink action="incluirEditar">
