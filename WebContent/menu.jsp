@@ -11,6 +11,7 @@
 <body>
 	<h1>Logado!!</h1>
 	<f:view>
+		
 		<h:outputText value="Supermercado On Line"
 			style="font: 18px Arial; font-weight: bold;" />
 		<p />

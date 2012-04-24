@@ -12,13 +12,18 @@
 	<h:outputText value="Área Restrita"/><br><br>
 	<h:form>
 	
+		<h:messages layout="table" errorStyle="color: red"
+				infoStyle="color: green" warnStyle="color: orange"
+				fatalStyle="color: gray" style="font: 14px Arial;"
+				showSummary="false" showDetail="true" />
+		
 		<h:outputLabel>Login : </h:outputLabel><br>
-		<h:inputText value="#{usuarioManagedBean.usuario.nome}"/><br>
+		<h:inputText value="#{usuarioSistemaManagedBean.usuario.nome}"/><br>
 		
 		<h:outputLabel>Senha : </h:outputLabel><br>
-		<h:inputSecret value="#{usuarioManagedBean.usuario.senha}"/><br><br>
+		<h:inputSecret value="#{usuarioSistemaManagedBean.usuario.senha}"/><br><br>
 		
-		<h:commandButton value="Entrar" action="#{usuarioManagedBean.isLogin}"/>
+		<h:commandButton value="Entrar" action="#{usuarioSistemaManagedBean.isLogin}"/>
 	
 	</h:form>
 	

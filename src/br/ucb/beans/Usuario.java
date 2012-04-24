@@ -42,12 +42,5 @@ public class Usuario implements Serializable{
 		return senha;
 	}
 
-	//	public boolean equals (Object obj) {   
-	//        if (obj == null) return false;   
-	//        if (obj.getClass() != Usuario.class) return false;   
-	//        Usuario outro = (Usuario) obj;   
-	//        return nome.equals (outro.nome) && senha.equals (outro.senha);   
-	//    }
-
 
 }
