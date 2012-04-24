@@ -47,7 +47,7 @@
 				</h:column>
 				
 				<h:column>
-				<h:commandLink actionListener="#{produtoManagedBean.excluir}">
+				<h:commandLink actionListener="#{produtoManagedBean.excluir}"> 
 					<f:attribute name="produto" value="#{item}" />
 					<h:graphicImage value="/img/excluir.png" title="Excluir"
 						style="border: none" />
