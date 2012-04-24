@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13349247348810" configfile="/TalpProject/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13349247348810" configfile="/TalpPFMeu/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="acesso" x="338" y="178" id="pf13349265786601" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" path="/acesso.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="menu" x="554" y="946" id="pf13349265786604" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" path="/menu.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="restrito/produtoLista" x="338" y="562" id="pf133492657866011" referenceLink="//@navigationRule.5/@fromViewId|" path="/restrito/produtoLista.jsp"/>
