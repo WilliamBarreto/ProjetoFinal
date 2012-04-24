@@ -40,9 +40,9 @@ public class ProdutoManagedBean {
 		}
 		else {
 			if (this.produto.getId() == 0)
-				JSFMensageiro.info("Aluno incluido com sucesso!");
+				JSFMensageiro.info("Produto incluido com sucesso!");
 			else
-				JSFMensageiro.info("Aluno alterado com sucesso!");
+				JSFMensageiro.info("Produto alterado com sucesso!");
 			new ProdutoHIB().salvar(this.produto);
 			this.produto = new Produto();
 			this.produtos = new ProdutoHIB().listar();
@@ -60,7 +60,7 @@ public class ProdutoManagedBean {
 		this.produto = (Produto) evento.getComponent().getAttributes().get("produto");
 		try {
 			new ProdutoHIB().excluir(this.produto);
-			JSFMensageiro.info("Aluno excluido com sucesso!");
+			JSFMensageiro.info("Produto excluido com sucesso!");
 		} catch (ConstraintViolationException e) {
 			e.printStackTrace();
 			JSFMensageiro.error("Erro inesperado ao excluir aluno!");
