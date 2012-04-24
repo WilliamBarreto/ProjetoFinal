@@ -25,5 +25,29 @@
 		<managed-bean-class>br.ucb.managedBean.ClienteManagedBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<navigation-rule>
+		<display-name>index</display-name>
+		<from-view-id>/index.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>restrito</from-outcome>
+			<to-view-id>/loginAdmin.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>loginAdmin</display-name>
+		<from-view-id>/loginAdmin.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>autorizado</from-outcome>
+			<to-view-id>/menu.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>loginAdmin</display-name>
+		<from-view-id>/loginAdmin.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>naoAutorizado</from-outcome>
+			<to-view-id>/loginAdmin.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>
