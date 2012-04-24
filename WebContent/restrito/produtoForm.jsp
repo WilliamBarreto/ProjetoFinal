@@ -21,6 +21,7 @@
 				<h:inputText id="preco" value="#{produtoManagedBean.produto.preco}" /><br><br>
 	
 				<h:commandButton value="Salvar" action="#{produtoManagedBean.salvar}" />
+				<h:commandButton value="Voltar" action="raiz" />
 		</h:form>
 	</f:view>
 </body>

@@ -31,7 +31,7 @@
 	<f:view>
 		<h:outputLink style="text-align:right">Area Restrita</h:outputLink>
 		<div style="text-align: center;">
-			<h:graphicImage value="/img/banner.jpg" />
+			<h:graphicImage value="/img/banner.jpg"/>
 		</div>
 		<br>
 		<br>

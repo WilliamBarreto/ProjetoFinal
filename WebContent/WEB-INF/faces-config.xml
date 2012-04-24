@@ -49,5 +49,47 @@
 			<to-view-id>/loginAdmin.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<display-name>menu</display-name>
+		<from-view-id>/menu.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{produtoManagedBean.listar}</from-action>
+			<from-outcome>produto</from-outcome>
+			<to-view-id>/restrito/produtoLista.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>restrito/produtoLista</display-name>
+		<from-view-id>/restrito/produtoLista.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>incluirEditar</from-outcome>
+			<to-view-id>/restrito/produtoForm.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>restrito/produtoForm</display-name>
+		<from-view-id>/restrito/produtoForm.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>raiz</from-outcome>
+			<to-view-id>/restrito/produtoLista.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>restrito/produtoLista</display-name>
+		<from-view-id>/restrito/produtoLista.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>raiz</from-outcome>
+			<to-view-id>/menu.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>restrito/produtoForm</display-name>
+		<from-view-id>/restrito/produtoForm.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{produtoManagedBean.salvar}</from-action>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/restrito/produtoForm.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>
