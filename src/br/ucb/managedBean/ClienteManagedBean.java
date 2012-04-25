@@ -82,7 +82,6 @@ public class ClienteManagedBean {
 		}		
 		this.cliente = new Cliente();
 		this.clientes = (ArrayList<Cliente>) new ClienteHIB().listar();
-		
 	}
 }
 

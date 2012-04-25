@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Usuario Sistema</title>
 </head>
 <body>
 <f:view>
-<h:outputText value="Supermercado On Line"
+
+		<h:outputText value="Supermercado On Line"
 			style="font: 18px Arial; font-weight: bold;" />
 		<p />
 		<h:outputText value="Listagem de Produtos"
@@ -20,7 +21,7 @@
 				infoStyle="color: green" warnStyle="color: orange"
 				fatalStyle="color: gray" style="font: 14px Arial;"
 				showSummary="false" showDetail="true" />
-			<h:dataTable value="#{clienteManagedBean.clientes}" var="item"
+			<h:dataTable value="#{usuarioSistemaManagedBean.usuarios}" var="item"
 				border="1" style="font: 14px Arial;">
 				<h:column>
 					<f:facet name="header">
@@ -31,30 +32,23 @@
 
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="CPF" />
+						<h:outputText value="Marca" />
 					</f:facet>
-					<h:outputText value="#{item.cpf}" />
+					<h:outputText value="#{item.senha}" />
 				</h:column>
 				
 				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Usuario" />
-					</f:facet>
-					<h:outputText value="#{item.usuario.nome}" />
-				</h:column>
-
-				<h:column>
-				<h:commandLink actionListener="#{clienteManagedBean.excluir}"> 
-					<f:attribute name="produto" value="#{item}" />
+				<h:commandLink actionListener="#{usuarioSistemaManagedBean.excluir}"> 
+					<f:attribute name="usuario" value="#{item}" />
 					<h:graphicImage value="/img/excluir.png" title="Excluir"
 						style="border: none" />
 				</h:commandLink>
-				</h:column> 
+				</h:column>
 				
 				<h:column>
-				<h:commandLink action="editar">
+				<h:commandLink action="incluirEditar">
 					<f:setPropertyActionListener value="#{item}"
-						target="#{clienteManagedBean.cliente}" />
+						target="#{usuarioSistemaManagedBean.usuario}" />
 					<h:graphicImage value="/img/editar.png" title="Editar"
 						style="border: none" />
 				</h:commandLink>
@@ -62,9 +56,10 @@
 			</h:dataTable>
 
 			<p />
+			<h:commandButton value="Incluir" action="incluirEditar" />
 			<h:commandButton value="Voltar" action="raiz" />
 		</h:form>
 
-</f:view>
+	</f:view>
 </body>
 </html>

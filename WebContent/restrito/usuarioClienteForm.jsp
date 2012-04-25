@@ -5,21 +5,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Criar Usuario</title>
+<title>Insert title here</title>
 </head>
 <body>
-<f:view>
-	<h:form>
+	<f:view>
 	
-		<h:outputLabel>Nome do Usuario</h:outputLabel><br>
-		<h:inputText value="#{usuarioSistemaManagedBean.usuario.nome}"/><br>
+	<h:form>
 		
-		<h:outputLabel>Senha</h:outputLabel><br>
-		<h:inputSecret value="#{usuarioSistemaManagedBean.usuario.senha}"/><br>
+		<h:outputLabel>Dados Pessoais</h:outputLabel><br><br>
 		
-		<h:commandButton value="Salvar" action="#{usuarioSistemaManagedBean.salvar}"/>
+		<h:outputLabel>Nome : </h:outputLabel>
+		<h:inputText value="#{usuarioClienteManagedBean.usuario.nome}"/><br>
+		
+		<h:outputLabel>CPF : </h:outputLabel>
+		<h:inputText value="#{usuarioClienteManagedBean.usuario.senha}"/><br><br>
+		
+		<h:commandButton value="Salvar" action="#{usuarioClienteManagedBean.salvar}"/>
 		<h:commandButton value="Voltar" action="raiz" />
+	
 	</h:form>
+	
 </f:view>
+
 </body>
 </html>

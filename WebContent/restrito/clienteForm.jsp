@@ -8,34 +8,44 @@
 <title>Insert title here</title>
 </head>
 <body>
-<f:view>
 	<f:view>
-		<h:form> 
-				<h:outputLabel value="Nome" for="nome" />
-				<h:inputText id="nome" value="#{clienteManagedBean.cliente.nome}" /><br><br>
 	
-				<h:outputLabel value="Endereço" for="endereco" />
-				<h:inputText id="marca" value="#{clienteManagedBean.cliente.endereco}" /><br><br>
+	<h:form>
+		
+		<h:outputLabel>Dados Pessoais</h:outputLabel><br><br>
+		
+		<h:outputLabel>Nome : </h:outputLabel>
+		<h:inputText value="#{clienteManagedBean.cliente.nome}"/><br>
+		
+		<h:outputLabel>CPF : </h:outputLabel>
+		<h:inputText value="#{clienteManagedBean.cliente.cpf}"/><br><br>
+		
+		<h:outputLabel>E-mail : </h:outputLabel>
+		<h:inputText value="#{clienteManagedBean.cliente.email}"/><br>
+		
+		<h:outputLabel>Endereço</h:outputLabel><br><br>
+		
+		<h:outputLabel>Logradouro</h:outputLabel>
+		<h:inputText value="#{clienteManagedBean.cliente.logradouro}"/><br>
+		
+		<h:outputLabel>Bairro</h:outputLabel>
+		<h:inputText value="#{clienteManagedBean.cliente.bairro}"/><br>
+		
+		<h:outputLabel>Cidade</h:outputLabel>
+		<h:inputText value="#{clienteManagedBean.cliente.cidade}"/><br>
+		
+		<h:outputLabel>UF</h:outputLabel>
+		<h:inputText value="#{clienteManagedBean.cliente.uf}"/><br>
+		
+		<h:outputLabel>CEP</h:outputLabel>
+		<h:inputText value="#{clienteManagedBean.cliente.cep}"/>	<br>
+		
+		<h:commandButton value="Salvar" action="#{clienteManagedBean.salvar}"/>
+		<h:commandButton value="Voltar" action="raiz" />
 	
-				<h:outputLabel value="CPF" for="cpf" />
-				<h:inputText id="preco" value="#{clienteManagedBean.cliente.cpf}" /><br><br>
-				
-				<h:outputLabel value="Cidade" for="cidade" />
-				<h:inputText id="preco" value="#{clienteManagedBean.cliente.cidade}" /><br><br>
-				
-				<h:outputLabel value="estado" for="estado" />
-				<h:inputText id="preco" value="#{clienteManagedBean.cliente.estado}" /><br><br>
-				
-				<h:outputLabel value="cep" for="cep" />
-				<h:inputText id="preco" value="#{clienteManagedBean.cliente.cep}" /><br><br>
-				
-				<h:outputLabel value="E-mail" for="email" />
-				<h:inputText id="preco" value="#{clienteManagedBean.cliente.email}" /><br><br>
+	</h:form>
 	
-				<h:commandButton value="Salvar" action="#{clienteManagedBean.salvar}" />
-		</h:form>
-	</f:view>
-
 </f:view>
+
 </body>
 </html>

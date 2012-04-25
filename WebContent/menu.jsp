@@ -21,11 +21,13 @@
 		
 		
 		<h:form style="font: 14px Arial;">
-			<h:commandLink value="Produto" action="#{produtoManagedBean.listar}" />
-			<br />
-			<h:commandLink value="Usuarios" action="#{usuarioManagedBean.listar}" />
+			<h:commandLink value="Produtos" action="#{produtoManagedBean.listar}" />
 			<br />
 			<h:commandLink value="Clientes" action="#{clienteManagedBean.listar}" />
+			<br />
+			<h:commandLink value="Usuarios do Sistema" action="#{usuarioSistemaManagedBean.listar}" />
+			<br />
+			<h:commandLink value="Usuarios Clientes" action="#{usuarioClienteManagedBean.listar}" />
 
 		</h:form>
 

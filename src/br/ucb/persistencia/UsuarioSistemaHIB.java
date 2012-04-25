@@ -11,7 +11,7 @@ import br.ucb.util.HibernateUtil;
 
 public class UsuarioSistemaHIB {
 	
-	public void Salvar(UsuarioSistema usuario){
+	public void salvar(UsuarioSistema usuario){
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(usuario);
@@ -28,5 +28,13 @@ public class UsuarioSistemaHIB {
 		} finally {
 			session.close();
 		}
+	}
+	
+	public void excluir(UsuarioSistema usuario) {
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		session.delete(usuario);
+		tx.commit();
+		session.close();
 	}
 }

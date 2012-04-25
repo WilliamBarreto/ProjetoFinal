@@ -2,9 +2,15 @@
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13352824759800" configfile="/TalpPFMeu/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="index" x="122" y="178" id="pf13352852720971" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13352859331662" path="/index.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="loginAdmin" x="338" y="178" id="pf13352859331663" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf13352859331664 pf13352859331665" inlinks="pf13352859331662 pf13352859331665" path="/loginAdmin.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="menu" x="554" y="178" id="pf13352859331666" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" outlinks="pf13352859331667" inlinks="pf13352859331664 pf133528617494812" path="/menu.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="restrito/produtoLista" x="523" y="24" id="pf13352859331668" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf13352860808869 pf133528617494812" inlinks="pf13352859331667 pf133528609657911" path="/restrito/produtoLista.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="restrito/produtoForm" x="852" y="24" id="pf133528608088610" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf133528609657911 pf133528621532913" inlinks="pf13352860808869 pf133528621532913" path="/restrito/produtoForm.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="menu" x="554" y="178" id="pf13352859331666" referenceLink="//@navigationRule.16/@navigationCase.0/@toViewId|" outlinks="pf13352859331667 pf133528825596914 pf13353621016652 pf13353654489760" inlinks="pf13352859331664 pf133528617494812 pf133528826686618 pf13353621264164 pf13353655303072" path="/menu.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="restrito/produtoLista" x="523" y="24" id="pf13352859331668" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf13352860808869 pf133528617494812" inlinks="pf13352859331667 pf133528609657911 pf13353588665180" path="/restrito/produtoLista.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="restrito/produtoForm" x="924" y="24" id="pf133528608088610" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf133528609657911 pf133528621532913 pf13353588665180" inlinks="pf13352860808869 pf133528621532913" path="/restrito/produtoForm.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="restrito/clienteLista" x="744" y="178" id="pf133528825596915" referenceLink="//@navigationRule.14/@navigationCase.0/@toViewId|" outlinks="pf133528825596916 pf133528826686618" inlinks="pf133528825596914 pf133528836595519 pf13353589068951" path="/restrito/clienteLista.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="restrito/clienteForm" x="984" y="168" id="pf133528825596917" referenceLink="//@navigationRule.14/@fromViewId|" outlinks="pf133528836595520 pf133528836595519 pf13353589068951" inlinks="pf133528825596916 pf133528836595520" path="/restrito/clienteForm.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="restrito/usuarioSistemaLista" x="505" y="360" id="pf13353621016663" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" outlinks="pf13353621264164 pf13353621787825" inlinks="pf13353621016652 pf13353621918817 pf13353622128418" path="/restrito/usuarioSistemaLista.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="restrito/usuarioSistemaForm" x="948" y="360" id="pf13353621787826" referenceLink="//@navigationRule.20/@navigationCase.0/@toViewId|" outlinks="pf13353621918817 pf13353622128418 pf13353622435759" inlinks="pf13353621787825 pf13353622435759" path="/restrito/usuarioSistemaForm.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="restrito/usuarioClienteLista" x="299" y="528" id="pf13353654489761" outlinks="pf13353655303072 pf13353655632733" inlinks="pf13353654489760 pf13353656959865 pf13353656959866" path="/restrito/usuarioClienteLista.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="restrito/usuarioClienteForm" x="950" y="528" id="pf13353655632734" outlinks="pf13353656959865 pf13353656959866 pf13353657279687" inlinks="pf13353655632733 pf13353657279687" path="/restrito/usuarioClienteForm.jsp"/>
   <links id="pf13352859331662" target="pf13352859331663" source="pf13352852720971" outcome="restrito"/>
   <links id="pf13352859331664" target="pf13352859331666" source="pf13352859331663" outcome="autorizado"/>
   <links id="pf13352859331665" target="pf13352859331663" source="pf13352859331663" outcome="naoAutorizado">
@@ -16,7 +22,38 @@
   <links id="pf13352860808869" target="pf133528608088610" source="pf13352859331668" outcome="incluirEditar"/>
   <links id="pf133528609657911" target="pf13352859331668" source="pf133528608088610" outcome="raiz"/>
   <links id="pf133528617494812" target="pf13352859331666" source="pf13352859331668" outcome="raiz"/>
-  <links id="pf133528621532913" target="pf133528608088610" source="pf133528608088610" outcome="sucesso" fromaction="#{produtoManagedBean.salvar}">
+  <links id="pf133528621532913" target="pf133528608088610" source="pf133528608088610" outcome="erro">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf133528825596914" target="pf133528825596915" source="pf13352859331666" outcome="cliente" fromaction="#{clienteManagedBean.listar}"/>
+  <links id="pf133528825596916" target="pf133528825596917" source="pf133528825596915" outcome="editar"/>
+  <links id="pf133528826686618" target="pf13352859331666" source="pf133528825596915" outcome="raiz"/>
+  <links id="pf133528836595520" target="pf133528825596917" source="pf133528825596917" outcome="erro">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf133528836595519" target="pf133528825596915" source="pf133528825596917" outcome="raiz"/>
+  <links id="pf13353588665180" target="pf13352859331668" source="pf133528608088610" outcome="sucesso" fromaction="#{produtoManagedBean.salvar}"/>
+  <links id="pf13353589068951" target="pf133528825596915" source="pf133528825596917" outcome="sucesso" fromaction="#{clienteManagedBean.salvar}"/>
+  <links id="pf13353621016652" target="pf13353621016663" source="pf13352859331666" outcome="usuarioSistema" fromaction="#{usuarioSistemaManagedBean.listar}"/>
+  <links id="pf13353621264164" target="pf13352859331666" source="pf13353621016663" outcome="raiz"/>
+  <links id="pf13353621787825" target="pf13353621787826" source="pf13353621016663" outcome="incluirEditar"/>
+  <links id="pf13353621918817" target="pf13353621016663" source="pf13353621787826" outcome="raiz"/>
+  <links id="pf13353622128418" target="pf13353621016663" source="pf13353621787826" outcome="sucesso" fromaction="#{usuarioSistemaManagedBean.salvar}"/>
+  <links id="pf13353622435759" target="pf13353621787826" source="pf13353621787826" outcome="erro">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13353654489760" target="pf13353654489761" source="pf13352859331666" outcome="usuarioCliente" fromaction="#{usuarioClienteManagedBean.listar}"/>
+  <links id="pf13353655303072" target="pf13352859331666" source="pf13353654489761" outcome="raiz"/>
+  <links id="pf13353655632733" target="pf13353655632734" source="pf13353654489761" outcome="editar"/>
+  <links id="pf13353656959865" target="pf13353654489761" source="pf13353655632734" outcome="raiz"/>
+  <links id="pf13353656959866" target="pf13353654489761" source="pf13353655632734" outcome="sucesso" fromaction="#{usuarioClienteManagedBean.salvar}"/>
+  <links id="pf13353657279687" target="pf13353655632734" source="pf13353655632734" outcome="erro">
     <bendPoints d1Height="-36" d2Height="-36"/>
     <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
     <bendPoints d1Width="-64" d2Width="-64"/>
