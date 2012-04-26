@@ -15,7 +15,7 @@
 		<h:inputText value="#{usuarioSistemaManagedBean.usuario.nome}"/><br>
 		
 		<h:outputLabel>Senha</h:outputLabel><br>
-		<h:inputSecret value="#{usuarioSistemaManagedBean.usuario.senha}"/><br>
+		<h:inputText value="#{usuarioSistemaManagedBean.usuario.senha}"/><br>
 		
 		<h:commandButton value="Salvar" action="#{usuarioSistemaManagedBean.salvar}"/>
 		<h:commandButton value="Voltar" action="raiz" />
