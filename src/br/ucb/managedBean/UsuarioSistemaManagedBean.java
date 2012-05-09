@@ -61,14 +61,14 @@ public class UsuarioSistemaManagedBean {
 			new UsuarioSistemaHIB().salvar(this.usuario);
 			this.usuario = new UsuarioSistema();
 			this.usuarios = new UsuarioSistemaHIB().listar();
-			return "sucesso";
+			return "/restrito/usuarioSistemaLista";
 		}
 	}
 	
 	public String listar(){
 		this.usuario = new UsuarioSistema();
 		this.usuarios = new UsuarioSistemaHIB().listar();
-		return "usuarioSistema";
+		return "/restrito/usuarioSistemaLista";
 	}
 	
 	public void excluir(ActionEvent evento) {
@@ -83,6 +83,10 @@ public class UsuarioSistemaManagedBean {
 		
 		this.usuario = new UsuarioSistema();
 		this.usuarios = new UsuarioSistemaHIB().listar();
+	}
+	
+	public String incluir(){
+		return "/restrito/usuarioSistemaForm";
 	}
 	
 	

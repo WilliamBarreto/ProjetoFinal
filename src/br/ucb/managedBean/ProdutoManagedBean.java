@@ -46,14 +46,14 @@ public class ProdutoManagedBean {
 			new ProdutoHIB().salvar(this.produto);
 			this.produto = new Produto();
 			this.produtos = new ProdutoHIB().listar();
-			return "sucesso";
+			return "/restrito/produtoLista";
 		}
 	}
 	
 	public String listar() {
 		this.produto = new Produto();
 		this.produtos = new ProdutoHIB().listar();
-		return "produto";
+		return "/restrito/produtoLista";
 	}
 	
 	public void excluir(ActionEvent evento) {
@@ -69,4 +69,8 @@ public class ProdutoManagedBean {
 		this.produtos = (ArrayList<Produto>) new ProdutoHIB().listar();
 		
 	}
+	
+	public String incluir(){
+		return "/restrito/produtoForm";
+	}		
 }

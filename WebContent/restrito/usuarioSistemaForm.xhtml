@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+</h:head>
+
+<h:body>
+
+
+	<h:form>
+
+		<p:panelGrid columns="2">
+
+			<f:facet name="header">  
+        Cadastro de Admin
+    		</f:facet>
+
+			<h:outputLabel for="nome" value="Usuario: *" />
+			<p:inputText id="nome"
+				value="#{usuarioSistemaManagedBean.usuario.nome}" label="nome" />
+
+			<h:outputLabel for="senha" value="Senha: *" />
+			<p:password id="senha"
+				value="#{usuarioSistemaManagedBean.usuario.senha}" required="true"
+				label="senha" feedback="true" />
+
+			<f:facet name="footer">
+
+				<p:commandButton value="Salvar"
+					action="#{usuarioSistemaManagedBean.salvar}" icon="ui-icon-check"
+					style="margin:0" ajax="false" />
+
+				<p:commandButton value="Voltar" action="raiz" icon="ui-ico-back"
+					style="margin:0" ajax="false" />
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+
+</h:body>
+</html>
