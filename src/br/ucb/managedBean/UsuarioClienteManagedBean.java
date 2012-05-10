@@ -46,16 +46,15 @@ public class UsuarioClienteManagedBean {
 			else
 				JSFMensageiro.info("Usuario alterado com sucesso!");
 			new UsuarioClienteHIB().salvar(this.usuario);
-			this.usuario = new UsuarioCliente();
-			this.usuarios = (ArrayList<UsuarioCliente>) new UsuarioClienteHIB().listar();
-			return "sucesso";
+			return listar();
 		}
 	}
 
+	
 	public String listar() {
 		this.usuario= new UsuarioCliente();
 		this.usuarios =  (ArrayList<UsuarioCliente>) new UsuarioClienteHIB().listar();
-		return "usuarioCliente";
+		return "/restrito/usuarioClienteLista";
 	}
 
 
@@ -72,6 +71,10 @@ public class UsuarioClienteManagedBean {
 		this.usuario = new UsuarioCliente();
 		this.usuarios = (ArrayList<UsuarioCliente>) new UsuarioClienteHIB().listar();
 
+	}
+	
+	public String incluir(){
+		return "/restrito/usuarioClienteForm";
 	}
 
 
