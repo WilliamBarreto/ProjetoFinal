@@ -53,7 +53,7 @@
 			</p:column>
 
 			<p:column>
-				<p:commandLink action="incluirEditar">
+				<p:commandLink action="#{usuarioSistemaManagedBean.incluir}">
 					<f:setPropertyActionListener value="#{item}"
 						target="#{usuarioSistemaManagedBean.usuario}" />
 					<h:graphicImage value="/img/editar.png" title="Editar"

@@ -33,7 +33,9 @@ public class ProdutoManagedBean {
 		this.produtos = produtos;
 	}
 	
+	
 	public String salvar() {
+		
 		if (this.produto.getNome().length() < 5) {
 			JSFMensageiro.error("formulario:nome", "Nome incompleto!", "O nome dever ter no minimo de 5 caracteres");
 			return "erro";
@@ -43,10 +45,10 @@ public class ProdutoManagedBean {
 				JSFMensageiro.info("Produto incluido com sucesso!");
 			else
 				JSFMensageiro.info("Produto alterado com sucesso!");
+			
 			new ProdutoHIB().salvar(this.produto);
-			this.produto = new Produto();
-			this.produtos = new ProdutoHIB().listar();
-			return "/restrito/produtoLista";
+			
+			return listar();
 		}
 	}
 	

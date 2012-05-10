@@ -59,9 +59,8 @@ public class UsuarioSistemaManagedBean {
 			else
 				JSFMensageiro.info("Usuario alterado com sucesso!");
 			new UsuarioSistemaHIB().salvar(this.usuario);
-			this.usuario = new UsuarioSistema();
-			this.usuarios = new UsuarioSistemaHIB().listar();
-			return "/restrito/usuarioSistemaLista";
+		
+			return listar();
 		}
 	}
 	

@@ -81,9 +81,10 @@ public class ClienteManagedBean {
 		} catch (ConstraintViolationException e) {
 			e.printStackTrace();
 			JSFMensageiro.error("Erro inesperado ao excluir usuario!");
-		}		
-		this.cliente = new Cliente();
-		this.clientes = (ArrayList<Cliente>) new ClienteHIB().listar();
+		}
+		this.cliente= new Cliente();
+		this.clientes =  (ArrayList<Cliente>) new ClienteHIB().listar();
+		
 	}
 	
 	public String incluir(){

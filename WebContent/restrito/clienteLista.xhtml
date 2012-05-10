@@ -16,7 +16,7 @@
 
 <h:outputText value="Supermercado On Line"
 			style="font: 18px Arial; font-weight: bold;" />
-		
+		<p />
 		<h:outputText value="Listagem de Produtos"
 			style="font: 16px Arial; font-weight: bold; color: gray;" />
 		
@@ -52,14 +52,14 @@
 
 				<p:column>
 				<h:commandLink actionListener="#{clienteManagedBean.excluir}"> 
-					<f:attribute name="produto" value="#{item}" />
+					<f:attribute name="cliente" value="#{item}" />
 					<h:graphicImage value="/img/excluir.png" title="Excluir"
 						style="border: none" />
 				</h:commandLink>
 				</p:column> 
 				
 				<p:column>
-				<h:commandLink action="editar">
+				<h:commandLink action="#{clienteManagedBean.incluir}">
 					<f:setPropertyActionListener value="#{item}"
 						target="#{clienteManagedBean.cliente}" />
 					<h:graphicImage value="/img/editar.png" title="Editar"
@@ -70,7 +70,7 @@
 
 			<p />
 			<p:commandButton value="Incluir" action="#{clienteManagedBean.incluir}" ajax="false"/>
-			<p:commandButton value="Voltar" action="menu" ajax="false" />
+			<p:commandButton value="Voltar" action="menu?faces-redirect=true" />
 		</h:form>
 
 	</h:body>
