@@ -60,7 +60,9 @@ public class ClienteManagedBean {
 	
 			new UsuarioClienteHIB().salvar(usuario);
 			new ClienteHIB().salvar(this.cliente);
-			return "sucesso";
+			
+			
+			return listar();
 	}
 	
 		
@@ -68,7 +70,7 @@ public class ClienteManagedBean {
 	public String listar() {
 		this.cliente= new Cliente();
 		this.clientes =  (ArrayList<Cliente>) new ClienteHIB().listar();
-		return "cliente";
+		return "/restrito/clienteLista";
 	}
 	
 	public void excluir(ActionEvent evento) {
@@ -82,6 +84,10 @@ public class ClienteManagedBean {
 		}		
 		this.cliente = new Cliente();
 		this.clientes = (ArrayList<Cliente>) new ClienteHIB().listar();
+	}
+	
+	public String incluir(){
+		return "/restrito/clienteForm";
 	}
 }
 
