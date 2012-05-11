@@ -42,5 +42,5 @@ public class UsuarioSistema extends Usuario implements Serializable{
 	        if (obj.getClass() != UsuarioSistema.class) return false;   
 	        UsuarioSistema outro = (UsuarioSistema) obj;   
 	       return super.getNome().equals (outro.getNome()) && super.getSenha().equals (outro.getSenha());   
-	    }
+	}
 }

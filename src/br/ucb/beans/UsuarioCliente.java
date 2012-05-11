@@ -54,7 +54,12 @@ public class UsuarioCliente extends Usuario implements Serializable{
 		this.cliente = cliente;
 	}
 	
-	
+	public boolean equals (Object obj) {   
+	        if (obj == null) return false;   
+	        if (obj.getClass() != UsuarioCliente.class) return false;   
+	        UsuarioCliente outro = (UsuarioCliente) obj;   
+	       return super.getNome().equals (outro.getNome()) && super.getSenha().equals (outro.getSenha());   
+	}
 	
 	
 	

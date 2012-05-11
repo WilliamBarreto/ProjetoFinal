@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" >
+	
+	<h:outputText value="Área Restrita"/>
+	<h:form>
+	
+		<h:messages layout="table" errorStyle="color: red"
+				infoStyle="color: green" warnStyle="color: orange"
+				fatalStyle="color: gray" style="font: 14px Arial;"
+				showSummary="false" showDetail="true" />
+		
+		<h:outputLabel>Login : </h:outputLabel><br/>
+		<h:inputText value="#{usuarioSistemaManagedBean.usuario.nome}"/><br/><br/>
+		
+		<h:outputLabel>Senha : </h:outputLabel><br/>
+		<h:inputSecret value="#{usuarioSistemaManagedBean.usuario.senha}"/><br/><br/>
+		
+		<h:commandButton value="Entrar" action="#{usuarioSistemaManagedBean.isLogin}"/>
+	
+	</h:form>
+
+
+</html>

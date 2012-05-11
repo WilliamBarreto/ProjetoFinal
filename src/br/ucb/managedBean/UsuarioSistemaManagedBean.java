@@ -41,10 +41,10 @@ public class UsuarioSistemaManagedBean {
 		this.usuarios = new UsuarioSistemaHIB().listar();
 	
 		if(usuarios.contains(usuario)){
-			return "autorizado";
+			return "/restrito/menu";
 		}
 		JSFMensageiro.error("Login ou senha invalido!");
-		return "naoAutorizado";
+		return "loginAdmin";
 
 	}
 	
