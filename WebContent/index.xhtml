@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:outputText value="#{usuarioClienteManagedBean.usuario.nome}"/><br/>
+	<h:outputText value="#{usuarioClienteManagedBean.cliente.nome}"/><br/>
+	<h:outputText value="#{usuarioClienteManagedBean.status}"/><br/><br/>
+
+	<h:outputLink value="loginSistema.jsf">Login Sistema</h:outputLink><br/>
+	<h:outputLink value="loginCliente.jsf">Login Cliente</h:outputLink><br/><br/>
+	
+	
+	<h:outputText value="Produtos"/>
+	
+		<h:form>
+			<p:dataTable value="#{usuarioClienteManagedBean.produtos}" var="item" >
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Nome" />
+					</f:facet>
+					<h:outputText value="#{item.nome}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Marca" />
+					</f:facet>
+					<h:outputText value="#{item.marca}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Preço" />
+					</f:facet>
+					<h:outputText value="#{item.preco}" />
+				</p:column>
+				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Quantidade" />
+					</f:facet>
+					<h:inputText value="#{usuarioClienteManagedBean.quantidade}" size="3" style="text-align:right;"/>
+				</p:column>
+				
+				<p:column>
+				
+					<f:facet name="header">
+						<h:outputText value="Comprar"/>
+					</f:facet>
+					<f:attribute name="produto" value="#{item}" />
+				<h:commandLink actionListener="#{usuarioClienteManagedBean.imprimir}">
+					<h:graphicImage value="/img/carrinho.jpg" width="30%" style="border:0"/>
+				</h:commandLink>
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+	
+		    
+</html>
