@@ -17,10 +17,12 @@
 		<property name="cache.provider_class">
 			org.hibernate.cache.NoCacheProvider
 		</property>
+		<mapping class="br.ucb.beans.Autorizacao"/>
 		<mapping class="br.ucb.beans.Produto" />
 		<mapping class="br.ucb.beans.UsuarioSistema"/>
 		<mapping class="br.ucb.beans.UsuarioCliente"/>
 		<mapping class="br.ucb.beans.Cliente"/>
+		
 		
 	</session-factory>
 </hibernate-configuration>

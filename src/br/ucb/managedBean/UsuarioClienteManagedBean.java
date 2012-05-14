@@ -7,9 +7,13 @@ import javax.faces.event.ActionEvent;
 
 import org.hibernate.exception.ConstraintViolationException;
 
+import br.ucb.beans.Autorizacao;
+import br.ucb.beans.Carrinho;
 import br.ucb.beans.Cliente;
+import br.ucb.beans.Item;
 import br.ucb.beans.Produto;
 import br.ucb.beans.UsuarioCliente;
+import br.ucb.persistencia.AutorizacaoHIB;
 import br.ucb.persistencia.ClienteHIB;
 import br.ucb.persistencia.ProdutoHIB;
 import br.ucb.persistencia.UsuarioClienteHIB;
@@ -25,25 +29,54 @@ public class UsuarioClienteManagedBean {
 	private String status;
 	private Produto produto;
 	private int quantidade;
+	private Item item;
+	private Carrinho carrinho;
+	private boolean logado;
+	private List<Autorizacao> autorizacoes;
 	
-	public int getQuantidade() {
-		return quantidade;
+	
+	
+
+	public List<Autorizacao> getAutorizacoes() {
+		return autorizacoes;
 	}
 
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+	public void setAutorizacoes(List<Autorizacao> autorizacoes) {
+		this.autorizacoes = autorizacoes;
 	}
-
 
 	public UsuarioClienteManagedBean(){
 		this.usuario = new UsuarioCliente();
 		this.usuarios = new ArrayList<UsuarioCliente>();
 		this.produtos = new ProdutoHIB().listar();
 		this.produto = new Produto();
+		this.carrinho = new Carrinho();
+		this.logado = false;
+		this.autorizacoes = new AutorizacaoHIB().listar();
 	}
 	
-	
+	public boolean isLogado() {
+		return logado;
+	}
+
+	public void setLogado(boolean logado) {
+		this.logado = logado;
+	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
+	}	
 	public List<Produto> getProdutos() {
 		return produtos;
 	}
@@ -101,7 +134,15 @@ public class UsuarioClienteManagedBean {
 
 	public void setUsuario(UsuarioCliente usuario) {
 		this.usuario = usuario;
+	}	
+	public Carrinho getCarrinho() {
+		return carrinho;
 	}
+
+	public void setCarrinho(Carrinho carrinho) {
+		this.carrinho = carrinho;
+	}
+
 	public String salvar() {
 		if (this.usuario.getNome().length() < 5) {
 			JSFMensageiro.error("formulario:nome", "Nome incompleto!", "O nome dever ter no minimo de 5 caracteres");
@@ -160,7 +201,9 @@ public class UsuarioClienteManagedBean {
 				if(c.getUsuario().getNome().equals(this.usuario.getNome())){
 					this.cliente = c;
 				}
-			}	
+			}
+			this.logado = true;
+			this.carrinho = new Carrinho();
 			return "index";
 		}
 		this.status="Situação: Deslogado";
@@ -168,20 +211,35 @@ public class UsuarioClienteManagedBean {
 		return "index";
 	}
 
-	public void imprimir(ActionEvent evento){
+	public void addProduto(ActionEvent evento){
+		
+		if(this.logado){
 		this.produto = (Produto) evento.getComponent().getAttributes().get("produto");
 		
-		System.out.println(this.quantidade);
-		try {
-			System.out.println(this.produto.getNome());
-		} catch (ConstraintViolationException e) {
-			e.printStackTrace();
-			// TODO: handle exception
-		}
+//		System.out.println("Produto");
+//		System.out.println(this.quantidade);
+//		System.out.println(this.produto.getId());
+//		System.out.println(this.produto.getNome());
+//		System.out.println(this.produto.getMarca());
+//		System.out.println(this.produto.getPreco());
+		this.item = new Item();
+		this.item.setProduto(this.produto);
+		this.item.setQuantidade(this.quantidade);
 		
+//		System.out.println("Item");
+//		System.out.println(this.item.getProduto().getNome());
+//		System.out.println(this.item.getQuantidade());
 		
+		this.carrinho.addItem(this.item);
+		
+		this.quantidade = 0;
+		this.item = new Item();
 		this.produto = new Produto();
 		this.produtos = new ProdutoHIB().listar();
+		}else{
+			System.out.println("Burro! Tem que logar karai");
+		}
+		
 	}
 
 }
