@@ -92,6 +92,12 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1
 COLLATE = latin1_swedish_ci;
 
+CREATE TABLE autorizacao (
+  usuario int(11) NOT NULL,
+  papel varchar(15) NOT NULL,
+  PRIMARY KEY (usuario, papel),
+  CONSTRAINT fk_autorizacao FOREIGN KEY (usuario) REFERENCES usuarios (id_usuario_sistema)
+);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
