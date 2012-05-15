@@ -33,8 +33,7 @@
 			<f:facet name="footer">
 				<p:commandButton value="Salvar"
 					action="#{produtoManagedBean.salvar}" ajax="false" />
-				<p:commandButton value="Voltar" action="/restrito/produtoLista"
-					ajax="false" />
+				<p:commandButton value="Voltar" action="produtoLista?faces-recirect=true"/>
 			</f:facet>
 		</p:panelGrid>
 	</h:form>

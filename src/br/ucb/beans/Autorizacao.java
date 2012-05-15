@@ -13,15 +13,15 @@ public class Autorizacao implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private int usuario;
+	private String usuario;
 	private String papel;
 	
 	@Id
-	@Column(name="usuario")
-	public int getUsuario() {
+	@Column(name="nome_usuario_sistema")
+	public String getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(int usuario) {
+	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 	@Column(name="papel")

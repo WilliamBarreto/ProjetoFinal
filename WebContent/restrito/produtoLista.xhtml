@@ -53,7 +53,7 @@
 				<p:column>
 				<h:commandLink actionListener="#{produtoManagedBean.excluir}"> 
 					<f:attribute name="produto" value="#{item}" />
-					<h:graphicImage value="/img/excluir.png" title="Excluir"
+					<h:graphicImage name="excluir.png" library="images"
 						style="border: none" />
 				</h:commandLink>
 				</p:column>
@@ -62,7 +62,7 @@
 				<h:commandLink action="#{produtoManagedBean.incluir}">
 					<f:setPropertyActionListener value="#{item}"
 						target="#{produtoManagedBean.produto}" />
-					<h:graphicImage value="/img/editar.png" title="Editar"
+					<h:graphicImage name="editar.png" library="images"
 						style="border: none" />
 				</h:commandLink>
 				</p:column>
@@ -70,7 +70,7 @@
 
 			<p />
 			<p:commandButton value="Incluir" action="#{produtoManagedBean.incluir}" />
-			<p:commandButton value="Voltar" action="menu" />
+			<p:commandButton value="Voltar" action="menu?faces-redirect=true" />
 		</h:form>
 
 

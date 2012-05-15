@@ -32,7 +32,7 @@
 			value="#{usuarioSistemaManagedBean.usuarios}">
 			<p:column id="modelHeader">
 				<f:facet name="header">  
-                    Nome 
+                    Login 
             </f:facet>
 				<h:outputText value="#{item.nome}" />
 			</p:column>
@@ -47,7 +47,7 @@
 			<p:column>
 				<p:commandLink actionListener="#{usuarioSistemaManagedBean.excluir}">
 					<f:attribute name="usuario" value="#{item}" />
-					<h:graphicImage value="/img/excluir.png" title="Excluir"
+					<h:graphicImage name="excluir.png" library="images"
 						style="border: none" />
 				</p:commandLink>
 			</p:column>
@@ -56,7 +56,7 @@
 				<p:commandLink action="#{usuarioSistemaManagedBean.incluir}">
 					<f:setPropertyActionListener value="#{item}"
 						target="#{usuarioSistemaManagedBean.usuario}" />
-					<h:graphicImage value="/img/editar.png" title="Editar"
+					<h:graphicImage name="editar.png" library="images"
 						style="border: none" />
 				</p:commandLink>
 			</p:column>
@@ -64,7 +64,7 @@
 
 		
 		<p:commandButton value="Incluir" action="#{usuarioSistemaManagedBean.incluir}" ajax="false" />
-		<p:commandButton value="votlar" action="menu" />
+		<p:commandButton value="votlar" action="menu?faces-redirect=true" />
 	</h:form>
 
 

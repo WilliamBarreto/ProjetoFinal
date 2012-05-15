@@ -1,6 +1,7 @@
 package br.ucb.beans;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,8 +26,19 @@ public class Cliente implements Serializable{
 	private String cep;
 	private String uf;
 	private UsuarioCliente usuario;
+	/*private Date dataNasc;
 	
 	
+	public Date getDataNasc() {
+		return dataNasc;
+	}
+
+
+	public void setDataNasc(Date dataNasc) {
+		this.dataNasc = dataNasc;
+	}
+*/
+
 	public Cliente(){
 		this.usuario = new UsuarioCliente();
 	}

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+
+<h1>Carrinho</h1>
+
+
+<p:dataTable value="#{usuarioClienteManagedBean.carrinho.itens}" var="item">
+	
+	<p:column>
+		<f:facet name="header">
+			<h:outputText value="Produto"/>
+		</f:facet>
+		<h:outputText value="#{item.produto.nome}"/>
+	</p:column>
+	
+	
+	<p:column>
+		<f:facet name="header">
+			<h:outputText value="Quantidade"/>
+		</f:facet>
+		<h:outputText value="#{item.quantidade}"/>
+	</p:column>
+	
+</p:dataTable>
+
+
+
+</h:body>
+
+</html>

@@ -9,7 +9,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-
+<h:outputScript name="primefaces-locale.js" library="javascript"/>
 </h:head>
 
 <h:body>
@@ -45,9 +45,13 @@
 		<h:outputLabel>CEP</h:outputLabel>
 		<p:inputText value="#{clienteManagedBean.cliente.cep}"/>
 		
+		<h:outputLabel>Data de Nascimento</h:outputLabel>
+		<p:calendar locale="pt" value="#{clienteManagedBean.cliente.dataNasc}"
+		yearRange="c-90:c" navigator="true" effect="slide" id="cal1" pattern="dd/MM/yyyy"/>
+		
 		<f:facet name="footer">
 		<p:commandButton value="Salvar" action="#{clienteManagedBean.salvar}"/>
-		<p:commandButton value="Voltar" action="/restrito/clienteLista?faces-redirect=true" />
+		<p:commandButton value="Voltar" action="clienteLista?faces-redirect=true" />
 		</f:facet>
 		
 		</p:panelGrid>
