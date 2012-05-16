@@ -11,6 +11,7 @@ CREATE  TABLE IF NOT EXISTS `supermercado`.`produto` (
   `nome_produto` VARCHAR(100) NULL DEFAULT NULL ,
   `marca_produto` VARCHAR(50) NULL DEFAULT NULL ,
   `preco_produto` DOUBLE NULL DEFAULT NULL ,
+  `foto_produto` VARCHAR(50) NULL DEFAULT NULL,
   PRIMARY KEY (`id_produto`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1
@@ -39,10 +40,10 @@ DEFAULT CHARACTER SET = latin1
 COLLATE = latin1_swedish_ci;
 
 CREATE  TABLE IF NOT EXISTS `supermercado`.`usuarios` (
-  `id_usuario_sistema` INT(11) NOT NULL AUTO_INCREMENT ,
-  `nome_usuario_sistema` VARCHAR(15) NULL DEFAULT NULL ,
+  `id_usuario_sistema` INT(11) NOT NULL ,
+  `nome_usuario_sistema` VARCHAR(15) NOT NULL,
   `senha_usuario_sistema` VARCHAR(10) NULL DEFAULT NULL ,
-  PRIMARY KEY (`id_usuario_sistema`) )
+  PRIMARY KEY (`nome_usuario_sistema`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1
 COLLATE = latin1_swedish_ci;
@@ -93,10 +94,10 @@ DEFAULT CHARACTER SET = latin1
 COLLATE = latin1_swedish_ci;
 
 CREATE TABLE autorizacao (
-  usuario int(11) NOT NULL,
+  nome_usuario_sistema VARCHAR(15) NOT NULL,
   papel varchar(15) NOT NULL,
-  PRIMARY KEY (usuario, papel),
-  CONSTRAINT fk_autorizacao FOREIGN KEY (usuario) REFERENCES usuarios (id_usuario_sistema)
+  PRIMARY KEY (nome_usuario_sistema, papel),
+  CONSTRAINT fk_autorizacao FOREIGN KEY (nome_usuario_sistema) REFERENCES usuarios (nome_usuario_sistema)
 );
 
 SET SQL_MODE=@OLD_SQL_MODE;

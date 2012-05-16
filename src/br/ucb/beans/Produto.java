@@ -18,6 +18,7 @@ public class Produto implements Serializable{
 	private String nome;
 	private String marca;
 	private Double preco;
+	private String foto;
 	
 	@GeneratedValue
 	@Id
@@ -51,6 +52,13 @@ public class Produto implements Serializable{
 	}
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+	@Column(name="foto_produto")
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 }
