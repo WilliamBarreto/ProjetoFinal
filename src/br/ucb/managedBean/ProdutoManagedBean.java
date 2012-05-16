@@ -1,8 +1,6 @@
 package br.ucb.managedBean;
 
 
-
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,8 +16,6 @@ import javax.servlet.ServletContext;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.primefaces.event.FileUploadEvent;
-import org.primefaces.model.UploadedFile;
-
 
 import br.ucb.beans.Produto;
 import br.ucb.persistencia.ProdutoHIB;
@@ -109,30 +105,44 @@ public class ProdutoManagedBean {
 		this.produtos = (ArrayList<Produto>) new ProdutoHIB().listar();
 
 	}
-
+	
+	//upando a foto na memoria, só é gravada quando o metodo salvar é disparado;
 	public void uploadAction (FileUploadEvent event){
 		
 		try {
 			
+			// pegando a foto
 			foto = event.getFile().getContents();
-			UploadedFile file = event.getFile();
-			nome = file.getFileName().intern();
 			
+			//pegando o nome da foto com o caminho
+			nome = event.getFile().getFileName();
+			
+			//tirando o caminho
+			String teste[] = nome.split("/");
+			for (int i = 0; i < teste.length; i++) {
+				if(i == teste.length){
+					nome = teste[i];
+				}
+			}
+			//pegando o caminho que a foto vai ser gravada
 			FacesContext facesContext = FacesContext.getCurrentInstance();  
 			ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();  
-			arquivo = scontext.getRealPath("/resources/image/" + nome);
-
+			arquivo = scontext.getRealPath("/resources/images/" + nome);
+			
+			//setando o nome da foto no banco
 			this.produto.setFoto(nome);
 
 		}catch (Exception ex){
 			System.out.println("Erro no Upload");
 		}
 	}
-		
+		//gravar imagen na aplicação
 		public void gravar(){
 			FileOutputStream fos;
 			try {
+			//passando o caminho;	
 			fos = new FileOutputStream(arquivo);
+			//passando o arquivo;
 			fos.write(foto);
 			fos.close();
 			
