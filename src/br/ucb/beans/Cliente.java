@@ -1,6 +1,7 @@
 package br.ucb.beans;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,14 +25,15 @@ public class Cliente implements Serializable{
 	private String cidade;
 	private String cep;
 	private String uf;
-	private UsuarioCliente usuario;
+	private Date dataNasc;
+	private Usuario usuario;
+	private String telefone;
 	
 	
 	public Cliente(){
-		this.usuario = new UsuarioCliente();
+		this.usuario = new Usuario();
 	}
-	
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name="id_cliente")
@@ -41,16 +43,18 @@ public class Cliente implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	@Column(name="nome_cliente")
+
+
+	@Column(name="nome")
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	
-	@Column(name="cpf_cliente")
+	@Column(name="cpf")
 	public String getCpf() {
 		return cpf;
 	}
@@ -58,15 +62,17 @@ public class Cliente implements Serializable{
 		this.cpf = cpf;
 	}
 
-	@Column(name="email_cliente")
+
+	@Column(name="email")
 	public String getEmail() {
 		return email;
-	}
+	}	
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	@Column(name="logradouro_cliente")
+
+
+	@Column(name="logradouro")
 	public String getLogradouro() {
 		return logradouro;
 	}
@@ -74,15 +80,17 @@ public class Cliente implements Serializable{
 		this.logradouro = logradouro;
 	}
 
-	@Column(name="bairro_cliente")
+	
+	@Column(name="bairro")
 	public String getBairro() {
 		return bairro;
 	}
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	
-	@Column(name="cidade_cliente")	
+
+
+	@Column(name="cidade")
 	public String getCidade() {
 		return cidade;
 	}
@@ -90,7 +98,8 @@ public class Cliente implements Serializable{
 		this.cidade = cidade;
 	}
 
-	@Column(name="cep_cliente")
+
+	@Column(name="cep")
 	public String getCep() {
 		return cep;
 	}
@@ -98,7 +107,8 @@ public class Cliente implements Serializable{
 		this.cep = cep;
 	}
 
-	@Column(name="uf_cliente")
+	
+	@Column(name="uf")
 	public String getUf() {
 		return uf;
 	}
@@ -106,14 +116,33 @@ public class Cliente implements Serializable{
 		this.uf = uf;
 	}
 
+	@Column(name="dataNasc")
+	public Date getDataNasc() {
+		return dataNasc;
+	}
+	public void setDataNasc(Date dataNasc) {
+		this.dataNasc = dataNasc;
+	}
+
+	
 	@OneToOne   
-    @JoinColumn(name="usuarioc_id_usuario_cliente")   
-	public UsuarioCliente getUsuario() {
+    @JoinColumn(name="login")
+	public Usuario getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(UsuarioCliente usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}		
+	}
+
+
+	@Column(name="telefone")
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
 	
 	
 }

@@ -4,7 +4,7 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost/supermercado</property>
+		<property name="connection.url">jdbc:mysql://localhost/supermercadoBD</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 		<property name="connection.pool_size">10</property>
@@ -17,11 +17,13 @@
 		<property name="cache.provider_class">
 			org.hibernate.cache.NoCacheProvider
 		</property>
+		<mapping class="br.ucb.beans.Usuario"/>
 		<mapping class="br.ucb.beans.Autorizacao"/>
-		<mapping class="br.ucb.beans.Produto" />
-		<mapping class="br.ucb.beans.UsuarioSistema"/>
-		<mapping class="br.ucb.beans.UsuarioCliente"/>
 		<mapping class="br.ucb.beans.Cliente"/>
+		<mapping class="br.ucb.beans.Produto"/>
+		<mapping class="br.ucb.beans.Venda"/>
+		<mapping class="br.ucb.beans.VendaProduto"/>
+		
 		
 		
 	</session-factory>

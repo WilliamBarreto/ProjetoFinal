@@ -7,27 +7,32 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.internal.NotNull;
+
 @Entity
 @Table(name="autorizacao")
 public class Autorizacao implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private int usuario;
+	private String login;
 	private String papel;
 	
+	@NotNull
+	@Column(name="login")
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
 	@Id
-	@Column(name="usuario")
-	public int getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(int usuario) {
-		this.usuario = usuario;
-	}
 	@Column(name="papel")
 	public String getPapel() {
 		return papel;
 	}
+	
 	public void setPapel(String papel) {
 		this.papel = papel;
 	}

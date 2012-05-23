@@ -1,11 +1,13 @@
 package br.ucb.beans;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +20,9 @@ public class Produto implements Serializable{
 	private String nome;
 	private String marca;
 	private Double preco;
+	private String tipo;
+	private String url;
+	private Collection<VendaProduto>vendaProdutoList;
 	
 	@GeneratedValue
 	@Id
@@ -29,7 +34,7 @@ public class Produto implements Serializable{
 		this.id = id;
 	}
 	
-	@Column(name="nome_produto")
+	@Column(name="nome")
 	public String getNome() {
 		return nome;
 	}
@@ -37,7 +42,7 @@ public class Produto implements Serializable{
 		this.nome = nome;
 	}
 	
-	@Column(name="marca_produto")
+	@Column(name="marca")
 	public String getMarca() {
 		return marca;
 	}
@@ -45,12 +50,36 @@ public class Produto implements Serializable{
 		this.marca = marca;
 	}
 	
-	@Column(name="preco_produto")
+	@Column(name="preco")
 	public Double getPreco() {
 		return preco;
 	}
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
-
+	
+	@Column(name="tipo")
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	@Column(name="url")
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	
+	@OneToMany(mappedBy="id.produto")
+	public Collection<VendaProduto> getVendaProdutoList() {
+		return vendaProdutoList;
+	}
+	public void setVendaProdutoList(Collection<VendaProduto> vendaProdutoList) {
+		this.vendaProdutoList = vendaProdutoList;
+	}
+	
 }

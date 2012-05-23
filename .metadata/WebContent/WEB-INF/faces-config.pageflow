@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13352824759800" configfile="/TalpPFMeu/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13352824759800" configfile="/TalpPFMeuBD/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="index" x="122" y="178" id="pf13352852720971" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13352859331662" path="/index.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="loginAdmin" x="338" y="178" id="pf13352859331663" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf13352859331665" inlinks="pf13352859331662 pf13352859331665" path="/loginAdmin.jsp"/>
   <links id="pf13352859331662" target="pf13352859331663" source="pf13352852720971" outcome="restrito"/>

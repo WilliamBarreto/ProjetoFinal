@@ -8,7 +8,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import br.ucb.beans.Cliente;
-import br.ucb.beans.UsuarioCliente;
+import br.ucb.beans.Usuario;
 import br.ucb.util.HibernateUtil;
 
 public class ClienteHIB {
@@ -39,11 +39,11 @@ public class ClienteHIB {
 		session.close();
 	}
 	
-	public Cliente buscaCliente(UsuarioCliente usuario){
+	public Cliente buscaCliente(Usuario usuario){
 		Cliente cliente;
 		Session session = HibernateUtil.getSession();
 		try{
-			cliente =(Cliente) session.createCriteria(Cliente.class).add(Restrictions.eq("usuarioc_id_usuario_cliente", usuario.getId())); 
+			cliente =(Cliente) session.createCriteria(Cliente.class).add(Restrictions.eq("usuarioc_id_usuario_cliente", usuario.getLogin())); 
 		}finally{
 			session.close();
 		}

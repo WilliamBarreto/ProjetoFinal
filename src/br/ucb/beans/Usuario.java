@@ -2,27 +2,49 @@ package br.ucb.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="usuario")
 public class Usuario implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	private String nome;
+	private String login;
 	private String senha;
-
-	public String getNome() {
-		return nome;
+	private Autorizacao autorizacao;
+	
+	
+	@Id
+	@Column(name="login")
+	public String getLogin() {
+		return login;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setLogin(String login) {
+		this.login = login;
 	}
-
+	
+	@Column(name="senha")
 	public String getSenha() {
 		return senha;
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
+	
+	@OneToOne
+	@JoinColumn(name="login")
+	public Autorizacao getAutorizacao() {
+		return autorizacao;
+	}
+	public void setAutorizacao(Autorizacao autorizacao) {
+		this.autorizacao = autorizacao;
+	}
 	public static String geraSenha(){
 
 		String[] carct ={"0","1","2","3","4","5","6","7","8","9",

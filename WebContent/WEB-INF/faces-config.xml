@@ -11,18 +11,13 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>usuarioSistemaManagedBean</managed-bean-name>
-		<managed-bean-class>br.ucb.managedBean.UsuarioSistemaManagedBean</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
-	<managed-bean>
-		<managed-bean-name>usuarioClienteManagedBean</managed-bean-name>
-		<managed-bean-class>br.ucb.managedBean.UsuarioClienteManagedBean</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
-	<managed-bean>
 		<managed-bean-name>clienteManagedBean</managed-bean-name>
 		<managed-bean-class>br.ucb.managedBean.ClienteManagedBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>usuarioManagedBean</managed-bean-name>
+		<managed-bean-class>br.ucb.managedBean.UsuarioManagedBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>

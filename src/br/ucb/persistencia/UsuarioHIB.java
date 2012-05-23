@@ -6,12 +6,12 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 
-import br.ucb.beans.UsuarioSistema;
+import br.ucb.beans.Usuario;
 import br.ucb.util.HibernateUtil;
 
-public class UsuarioSistemaHIB {
+public class UsuarioHIB {
 	
-	public void salvar(UsuarioSistema usuario){
+	public void salvar(Usuario usuario){
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(usuario);
@@ -21,16 +21,16 @@ public class UsuarioSistemaHIB {
 	
 	
 	@SuppressWarnings("unchecked")
-	public  List<UsuarioSistema> listar() {
+	public  List<Usuario> listar() {
 		Session session = HibernateUtil.getSession();
 		try {
-			return	session.createCriteria(UsuarioSistema.class).addOrder(Order.asc("nome")).list();
+			return	session.createCriteria(Usuario.class).addOrder(Order.asc("login")).list();
 		} finally {
 			session.close();
 		}
 	}
 	
-	public void excluir(UsuarioSistema usuario) {
+	public void excluir(Usuario usuario) {
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		session.delete(usuario);
