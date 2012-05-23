@@ -33,7 +33,7 @@
 					<f:facet name="header">
 						<h:outputText value="Foto" />
 					</f:facet>
-						<h:graphicImage name="#{item.foto}" library="images"/>
+						<h:graphicImage name="#{item.url}" library="images"/>
 				</p:column>
 				
 				<p:column>
@@ -79,6 +79,7 @@
 			<p:commandButton value="Incluir" action="#{produtoManagedBean.incluir}" />
 			<p:commandButton value="Voltar" action="menu?faces-redirect=true" />
 		</h:form>
+		
 
 
 </h:body>

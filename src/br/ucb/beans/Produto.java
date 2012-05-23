@@ -24,8 +24,6 @@ public class Produto implements Serializable{
 	private String tipo;
 	private String url;
 	private Collection<VendaProduto>vendaProdutoList;
-
-	private String foto;
 	
 	@GeneratedValue
 	@Id
@@ -85,12 +83,5 @@ public class Produto implements Serializable{
 		this.vendaProdutoList = vendaProdutoList;
 	}
 	
-	@Column(name="foto_produto")
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
 
 }

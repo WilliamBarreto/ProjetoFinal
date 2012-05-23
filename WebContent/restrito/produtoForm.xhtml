@@ -26,17 +26,20 @@
 
 			<h:outputLabel value="Marca" for="marca" />
 			<p:inputText id="marca" value="#{produtoManagedBean.produto.marca}" />
+			
+			<h:outputLabel value="Tipo" for="Tipo" />
+			<p:selectOneMenu id="Tipo" value="#{produtoManagedBean.produto.tipo}" >
+				<f:selectItem itemLabel="Escolha Um" itemValue=" "/>
+				<f:selectItem itemLabel="Alimenticio" itemValue="alimenticio"/>
+				<f:selectItem itemLabel="Higiene" itemValue="higiene"/>
+				<f:selectItem itemLabel="Limpeza" itemValue="limpeza"/>
+			</p:selectOneMenu>
 
 			<h:outputLabel value="Preço" for="preco" />
 			<p:inputText id="preco" value="#{produtoManagedBean.produto.preco}" />
 			
 			<h:outputLabel value="Foto" for="foto" />
-			<p:fileUpload fileUploadListener="#{produtoManagedBean.uploadAction}"
-            mode="advanced"  
-            update="messages"  
-            auto="true"  
-            sizeLimit="100000"
-            allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/>  
+			<p:fileUpload id="foto" fileUploadListener="#{produtoManagedBean.uploadAction}"/>  
   
     		<p:growl id="messages" showDetail="true"/>
 			

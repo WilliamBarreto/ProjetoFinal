@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -78,8 +79,9 @@ public class ProdutoManagedBean {
 				JSFMensageiro.info("Produto incluido com sucesso!");
 			else
 				JSFMensageiro.info("Produto alterado com sucesso!");
-
 			new ProdutoHIB().salvar(this.produto);
+			
+			this.produto = new Produto();
 			gravar();
 
 			return listar();
@@ -106,37 +108,31 @@ public class ProdutoManagedBean {
 
 	}
 	
-	//upando a foto na memoria, só é gravada quando o metodo salvar é disparado;
+	//upando a foto na memoria, sï¿½ ï¿½ gravada quando o metodo salvar ï¿½ disparado;
+	
 	public void uploadAction (FileUploadEvent event){
 		
 		try {
 			
 			// pegando a foto
 			foto = event.getFile().getContents();
-			
+			Date data = new Date();
 			//pegando o nome da foto com o caminho
-			nome = event.getFile().getFileName();
+			nome = (data.getTime() + ".jpg");
 			
-			//tirando o caminho
-			String teste[] = nome.split("/");
-			for (int i = 0; i < teste.length; i++) {
-				if(i == teste.length){
-					nome = teste[i];
-				}
-			}
 			//pegando o caminho que a foto vai ser gravada
 			FacesContext facesContext = FacesContext.getCurrentInstance();  
 			ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();  
 			arquivo = scontext.getRealPath("/resources/images/" + nome);
 			
 			//setando o nome da foto no banco
-			this.produto.setFoto(nome);
+			this.produto.setUrl(nome);
 
 		}catch (Exception ex){
 			System.out.println("Erro no Upload");
 		}
 	}
-		//gravar imagen na aplicação
+		//gravar imagen na aplicaï¿½ï¿½o
 		public void gravar(){
 			FileOutputStream fos;
 			try {

@@ -7,13 +7,25 @@
 
 
 
-
+<h:head>
+<script src="http://maps.google.com/maps/api/js?sensor=true"
+type="text/javascript"></script>
+</h:head>
 <h:form>
 
 	<h:commandButton value="Inicio" action="#{usuarioManagedBean.addTabela}"/>
+	
 
 </h:form>
 
+<p:gmap center="41.381542, 2.122893" zoom="15" type="hybrid"
+style="width:600px;height:400px" />
 
+
+<p:lightBox iframe="true">
+<h:outputLink value="/restrito/produtoForm" title="Teste">
+<h:outputText value="Teste"/>
+</h:outputLink>
+</p:lightBox>
 
 </html>

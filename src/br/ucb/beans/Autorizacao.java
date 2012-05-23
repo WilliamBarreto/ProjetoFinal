@@ -16,10 +16,9 @@ public class Autorizacao implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String login;
-	private String usuario;
 	private String papel;
 	
-	@NotNull
+	@Id
 	@Column(name="login")
 	public String getLogin() {
 		return login;
@@ -28,14 +27,6 @@ public class Autorizacao implements Serializable{
 		this.login = login;
 	}
 	
-	@Id
-	@Column(name="nome_usuario_sistema")
-	public String getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
 	
 	@Column(name="papel")
 	public String getPapel() {
