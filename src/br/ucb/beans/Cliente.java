@@ -29,7 +29,7 @@ public class Cliente implements Serializable{
 	private Usuario usuario;
 	private String telefone;
 	
-	
+
 	public Cliente(){
 		this.usuario = new Usuario();
 	}

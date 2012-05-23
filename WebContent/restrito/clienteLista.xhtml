@@ -53,8 +53,8 @@
 				<p:column>
 				<h:commandLink actionListener="#{clienteManagedBean.excluir}"> 
 					<f:attribute name="cliente" value="#{item}" />
-					<h:graphicImage value="/img/excluir.png" title="Excluir"
-						style="border: none" />
+						<h:graphicImage name="excluir.png" library="images"
+						style="border: none"/>
 				</h:commandLink>
 				</p:column> 
 				
@@ -62,8 +62,8 @@
 				<h:commandLink action="#{clienteManagedBean.incluir}">
 					<f:setPropertyActionListener value="#{item}"
 						target="#{clienteManagedBean.cliente}" />
-					<h:graphicImage value="/img/editar.png" title="Editar"
-						style="border: none" />
+					<h:graphicImage name="editar.png" library="images"
+						style="border: none"/>
 				</h:commandLink>
 				</p:column>
 			</p:dataTable>
